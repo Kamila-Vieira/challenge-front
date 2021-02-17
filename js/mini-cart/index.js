@@ -1,29 +1,38 @@
-const miniCartContainer = document.querySelector(".mini-cart-container");
-let cartProducts;
-
 async function fetchProducts() {
   let response = await fetch("../../products.json");
-  cartProducts = await response
+  let cartProducts = await response
     .json()
     .then(async (data) => {
       const { cart } = await data;
       return cart.item;
     })
     .catch((err) => console.log(err));
-  createProductsCartContainer(cartProducts);
+  console.log(cartProducts);
+  createCartProducts(cartProducts);
 }
 fetchProducts();
 
-function createProductsCartContainer(products) {
-  let productsContainer = `<div class="products-container">`;
-  let productContent;
+function createCartProducts(products) {
+  let productsPrice = [];
+  let productsContainer = document.querySelector(".products-container");
   products.forEach((product) => {
     const { productId, bestPriceFormated, name, image, quantity } = product;
-    productContent = `<div class="cart-product" id="${productId}">
+    productsPrice.push(bestPriceFormated);
+    let productContent = `<div class="cart-product" id="${productId}">
       <img src="${image}" alt="${name}" />
       <div class="product-info">
+        <h3 class="product-name">${name}</h3>
+        <div class="product-buy-info">
+          <p class="product-quantity">Qtd.:${quantity}</p>
+          <p class="product-price">${bestPriceFormated}</p>
+        </div>
+      </div>
     </div>`;
-    productsContainer += productContent;
+    productsContainer.insertAdjacentHTML("afterbegin", productContent);
   });
-  productsContainer += "</div>";
+  //countTotalProductsPrice(productsPrice);
 }
+
+/* function countTotalProductsPrice(prices) {
+  prices.map();
+} */
