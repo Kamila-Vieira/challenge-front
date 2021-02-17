@@ -94,6 +94,12 @@ body {
 .products-container {
   position: absolute;
 }
+.show-mini-cart {
+  display: block;
+}
+.products-container {
+  display: none;
+}
 @media (min-width: 768px) {
   .header {
     display: flex;

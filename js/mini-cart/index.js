@@ -30,9 +30,21 @@ function createCartProducts(products) {
     </div>`;
     productsContainer.insertAdjacentHTML("afterbegin", productContent);
   });
-  //countTotalProductsPrice(productsPrice);
+  setTotalProductsPrice(productsPrice);
 }
-
-/* function countTotalProductsPrice(prices) {
-  prices.map();
-} */
+function setTotalProductsPrice(prices) {
+  const totalPriceContainer = document.querySelector(
+    ".products-total-price span"
+  );
+  let totalPrice = prices
+    .map((price) =>
+      parseFloat(price.replace(/[(R$ ).]/g, "").replace(",", "."))
+    )
+    .reduce((acc, cur) => acc + cur, 0)
+    .toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+      minimumFractionDigits: 2,
+    });
+  totalPriceContainer.innerHTML = totalPrice;
+}
