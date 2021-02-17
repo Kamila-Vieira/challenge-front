@@ -91,6 +91,9 @@ body {
 .mini-cart-icon {
   width: 30px;
 }
+.products-container {
+  position: absolute;
+}
 @media (min-width: 768px) {
   .header {
     display: flex;
