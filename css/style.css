@@ -39,8 +39,8 @@ body {
   display: none;
   position: absolute;
   top: 65px;
-  background: #000000;
-  padding: 15px;
+  background: #f0f0f0;
+  padding: 15px 30px;
   line-height: 30px;
 }
 .menu-mobile-list::before {
@@ -48,9 +48,9 @@ body {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: #000;
-  top: -5px;
-  left: 110px;
+  background: #f0f0f0;
+  top: -10px;
+  left: 142px;
   transform: rotate(45deg);
 }
 .show-menu-mobile {
@@ -70,6 +70,10 @@ body {
   margin-bottom: 10px !important;
   margin-top: -3px;
   width: 35px !important;
+}
+.menu-item a {
+  text-decoration: none;
+  color: #303030;
 }
 .icons-container {
   margin-top: 10px;
@@ -101,6 +105,9 @@ body {
   }
   .menu-desktop-list {
     display: flex;
+  }
+  .menu-item {
+    margin-left: 30px;
   }
   .search-icon,
   .profile-icon,
