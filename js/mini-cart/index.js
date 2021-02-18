@@ -14,7 +14,7 @@ fetchProducts();
 
 function createCartProducts(products) {
   let productsPrice = [];
-  let productsContainer = document.querySelector(".products-container");
+  let productsContainer = document.querySelector(".products-content");
   products.forEach((product) => {
     const { productId, bestPriceFormated, name, image, quantity } = product;
     productsPrice.push(bestPriceFormated);
@@ -48,3 +48,12 @@ function setTotalProductsPrice(prices) {
     });
   totalPriceContainer.innerHTML = totalPrice;
 }
+
+const miniCart = document.querySelector(".mini-cart");
+//
+miniCart.addEventListener("click", function () {
+  document
+    .querySelector(".products-container")
+    .classList.toggle("show-mini-cart");
+  miniCart.classList.toggle("mini-cart-arrow");
+});

@@ -1,6 +1,6 @@
 const menuResponsive = document.querySelector(".menu-responsive");
 
-menuResponsive.addEventListener("click", function toogleResponsiveMenu() {
+menuResponsive.addEventListener("click", function () {
   menuResponsive
     .querySelector(".menu-responsive-first-bar")
     .classList.toggle("first-bar-close");
