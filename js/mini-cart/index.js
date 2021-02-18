@@ -1,5 +1,6 @@
 async function fetchProducts() {
-  let response = await fetch("../../products.json");
+  let URL_CART = "../../products.json";
+  let response = await fetch(URL_CART);
   let cartProducts = [];
   cartProducts = await response
     .json()
