@@ -25,7 +25,7 @@ function createCartProducts(products) {
         <div class="product-info">
           <h3 class="product-name">${name}</h3>
           <div class="product-buy-info">
-            <p class="product-quantity">Qtd.:${quantity}</p>
+            <p class="product-quantity">Qtd.: ${quantity}</p>
             <p class="product-price">${bestPriceFormated}</p>
           </div>
         </div>
