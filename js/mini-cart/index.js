@@ -50,10 +50,9 @@ function setTotalProductsPrice(prices) {
 }
 
 const miniCart = document.querySelector(".mini-cart");
-//
+
 miniCart.addEventListener("click", function () {
   document
     .querySelector(".products-container")
     .classList.toggle("show-mini-cart");
-  miniCart.classList.toggle("mini-cart-arrow");
 });
